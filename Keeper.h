@@ -9,13 +9,13 @@ class Keeper {
 public:
 	
 	void showListOfHeroes();
-	void addHero(Base* hero);
+	Keeper& operator += (Base* hero);
 	void removeHero(int ID);
 	void saveHero();
 	void loadHero();
 	bool isEmpty();
 	~Keeper();
-
+	
 	Base** listOfHeroes;
 	int getSize();
 

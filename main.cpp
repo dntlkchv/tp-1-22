@@ -118,15 +118,15 @@ int menu() {
 			break;
 
 		case 2:
-			keeper.addHero(new PosHero());
+			keeper += new PosHero();
 			break;
 
 		case 3:
-			keeper.addHero(new Villain());
+			keeper += new Villain();
 				break;
 
 		case 4:
-			keeper.addHero(new Monster());
+			keeper += new Monster();
 				break;
 		case 5:
 			remove();

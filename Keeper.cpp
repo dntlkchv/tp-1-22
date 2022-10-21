@@ -32,7 +32,9 @@ void Keeper::showListOfHeroes() {
 	}
 }
 
-void Keeper::addHero(Base* hero) {
+
+Keeper& Keeper::operator+=(Base* hero)
+{
 	Base** dest = new Base * [size + 1];
 	for (int i = 0; i < size; i++) {
 		dest[i] = listOfHeroes[i];
@@ -41,6 +43,7 @@ void Keeper::addHero(Base* hero) {
 	delete[]listOfHeroes;
 	listOfHeroes = dest;
 
+	return *this;
 }
 
 void Keeper::removeHero(int ID) {
@@ -146,7 +149,6 @@ void Keeper::loadHero() {
 		delete[]listOfHeroes;
 		listOfHeroes = dest;
 		cout << "\033[34mSuccessfully loaded!\033[0m" << endl;
-		
 
 	}
 	catch (runtime_error error) {
